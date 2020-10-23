@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#111425, #3751e0);
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+  
+  .moon {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+  .moon::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#111425, #3751e0);
+    background-attachment: fixed;
+  }
+  
+  .forest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transform: scale(1.2);
+  }
+  
+  .scene i {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+  
+    animation: mymove 3s linear infinite;
+  }
+  @keyframes mymove {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    10%,
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+  }
+  .container {
+    color: white;
+    display: flex;
+  }
+
+/* clock section */
+.clock{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: relative;
+    margin:  200px 400px;
+}
+
+
+.clock .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    
+}
+
+.clock .number1{transform: rotate(30deg);}
+.clock .number2{transform: rotate(60deg);}
+.clock .number3{transform: rotate(90deg);}
+.clock .number4{transform: rotate(120deg);}
+.clock .number5{transform: rotate(150deg);}
+.clock .number6{transform: rotate(180deg);}
+.clock .number7{transform: rotate(210deg);}
+.clock .number8{transform: rotate(240deg);}
+.clock .number9{transform: rotate(270deg);}
+.clock .number10{transform: rotate(300deg);}
+.clock .number11{transform: rotate(330deg);}
+.clock .number12{transform: rotate(360deg);}
+
+
+.clock .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    background-color: blanchedalmond;
+    transform-origin: bottom;
+    transform: rotate(calc(var(--rotation)*1deg));
+}
+
+.second{
+    width: 3px;
+    height: 45%;
+}
+.minute{
+    width: 5px;
+    height: 40%;
+}
+.hour{
+    width: 8px;
+    height: 35%;
+    
+}
